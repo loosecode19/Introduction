@@ -1,0 +1,274 @@
+@charset "utf-8";
+
+/*
+SA0001: I Sami Nachwati, 000879289 certify that this material is 
+my original work. No other person's work has been used without due 
+acknowledgement. I have not made my work available to anyone else.
+Author: Sami Nachwati
+Name: Sami Nachwati
+Student ID: 000879289
+file: assign1.css
+page description: the cascading style sheet for both the 
+"index.html" webpage and the "page.2.html" webpage.
+*/
+
+body {
+    background-color: #001233;
+    color: whitesmoke;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    line-height: 2.5em;
+}
+
+header.color {
+    background-color: cyan;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card
+{
+  width: 160px;
+  height: 185px;
+  background: #07182E;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.card img {
+    z-index: 1;
+    border-radius: 20px;
+}
+  
+.card::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-image: linear-gradient(to left, #AD1DEB, #6E72FC, red);
+    border-radius: 50%;
+    animation: movingColors 2s linear infinite;
+}
+  
+@keyframes movingColors {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+}
+  
+.card::after {
+    content: '';
+    position: absolute;
+    background: #07182E;
+}
+
+
+#me {
+    width: 150px;
+    height: 170px;
+}
+
+header.color h1, header.color h6  {
+    color: #001233;
+    text-transform: capitalize;
+}
+
+nav {
+    background-color: #000361;
+}
+
+nav.nav {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+
+nav.nav a.nav_items {
+    color: cyan;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 0 10px 50px 10px;
+    margin: 0 10px 0 10px;
+}
+
+nav.nav a.nav_items:hover{
+    color: pink;
+    background: linear-gradient(to right, midnightblue, #6E72FC, cyan);
+    background-size: 400% 400%;
+	animation: nav_animation 15s ease infinite;
+}
+
+@keyframes nav_animation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+header h1:hover{
+    animation: shake 2s infinite ease-in;
+    color: blue;
+}
+
+
+.main_headers {
+    color: cyan;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 40px;    
+} 
+
+
+header h6:hover{
+    animation: zoom 3s infinite ease-in-out;
+    color: blue;
+    font-family: verdana;
+    font-weight: bold;
+}
+
+@keyframes zoom{
+    100%{
+        transform: scale(0.9);
+    }
+}
+
+
+@keyframes shake{
+    0%,100%{
+        transform: rotate(0deg);   
+    }
+    10%, 30%,50%,70%, 90%{
+        transform: rotate(16deg);
+    }
+
+    20%, 40%, 60%, 80%, 100%{
+        transform: rotate(-16deg);
+
+    }
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px
+}
+
+#about_myself{
+    grid-column: 1;
+}
+
+#goals{
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#goals h4, #goals p{
+    grid-column: 1 / span 2;
+
+}
+
+#goals ul {
+    grid-column: 1;
+}
+
+#goals figure{
+    grid-column: 2;
+    align-self: center;
+}
+
+
+figure img {
+    width: 200px;
+    padding: 0 10px 10px 10px;
+}
+
+#analysis_container{
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.page2_imgs{
+    width: 350px; 
+}
+
+#analysis_header{
+    grid-column: 1 / span 2;
+}
+
+ 
+#analysis_section{
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#analysis_section h5, #analysis_section p {
+    grid-column: 1 / span 2;
+}
+
+#analysis_section ul{
+    grid-column: 1;
+}
+
+#analysis_section img{
+    grid-column: 2;
+}
+
+.img_item{
+    text-align: center;
+}
+
+h5{
+    grid-column: 1 / span 2;
+    color: coral;
+    text-align: center;
+    text-decoration: underline
+}
+
+footer {    
+    border-top: 1px solid cyan;
+    color: cyan;
+    padding: 50px;
+    font-weight: bold;
+}
+
+@media (max-width:600px){
+    header{
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+    figure{
+        display: flex;
+        flex-flow: column wrap;
+        gap: 20px;
+    }
+    #analysis_section{
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    #about_myself, #goals, #goals h4, #goals p,
+    #goals ul, #goals figure{
+        grid-column: 1 / span 2;
+    }
+}
