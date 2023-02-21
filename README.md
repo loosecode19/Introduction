@@ -1,2 +1,2 @@
 # Introduction
-An website that essentially describes myself along with my goals
+A website that essentially describes myself along with my goals
